@@ -55,6 +55,8 @@ sub change_state {
 
     show_icon( $tray, $timers, $icon_to_show );
 
+    $_->Interval( 0 ) for values %{$timers};
+
     $timers->{$timer_to_start}->Interval( $interval );
     return;
 }
